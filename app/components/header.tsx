@@ -23,7 +23,6 @@ export default function Header() {
       default: setCurrentPage(Page.Home); break;
     }
   }, [pathname])
-  const handleSwitchMenu = (e: any) => { console.log('currentTarget', e.currentTarget); console.log('target', e.target) }
   return <div className="container py-8">
     <div className="flex mx-auto columns-3 items-center justify-between w-10/12">
       <div>
@@ -54,7 +53,7 @@ export default function Header() {
           }
         </li>
       </ul>
-      <div className="flex">
+      <div>
         <button className="rounded-3xl border-2 border-slate-500 px-4 py-2">
           <span className="text-base">Subscribe</span>
         </button>
