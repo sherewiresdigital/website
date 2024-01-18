@@ -9,7 +9,8 @@ export default function Banner() {
           <h2 className="text-lg font-medium">
             Upcoming
           </h2>
-          <CampaignOutlinedIcon className='ml-4 w-8 h-8 font-light'/>
+          {/* <svg></svg> */}
+          <CampaignOutlinedIcon className='ml-4 w-8 h-8 font-light stroke-1'/>
         </div>
         <h1 className="pt-6 text-6xl font-bold">
           STEP IN HIGH
