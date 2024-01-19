@@ -1,4 +1,5 @@
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 
 export default function Subscribe() {
   return <div className="pl-8 pr-4 py-4 w-1/2 h-80 shadow-2xl">
@@ -15,9 +16,10 @@ export default function Subscribe() {
       </h2>
     </div>
     <div className='flex mt-16'>
-      <input type="text" value="tbone" disabled className="
-      block w-96 h-10 px-3 py-2 bg-white border border-slate-300 rounded-3xl text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" />
+      <div className="flex w-96 h-10 px-4 py-2 bg-white border border-slate-300 rounded-3xl">
+        <ForwardToInboxIcon />
+        <input type="text" value="email address" className='ml-4 text-sm shadow-sm placeholder-slate-200 focus:outline-none focus:border-none' />
+      </div>
       <button className="h-10 px-4 py-2 ml-4 rounded-3xl border-2 border-slate-500 ">
         <span className="text-base">Subscribe</span>
       </button>
