@@ -8,6 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        '6xl': ['64px', '96px']
+      },
+      colors: {
+        'darkgrey': '#1C1B1F',
+        'middlegrey': '#373C40',
+        'lightgrey': '#636366'
+      },
+      spacing: {
+        '114': '456px'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

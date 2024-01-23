@@ -23,16 +23,16 @@ export default function Footer() {
         <div>
           <ul className="py-4 list-none">
             <li className="pb-2">
-              <span className="font-medium">Youtube: She Rewires Digital</span>
+              <span className="font-medium text-lg">Youtube: She Rewires Digital</span>
             </li>
             <li className="pb-2">
-              <span className="font-medium">Wechat: She Rewires Digital</span>
+              <span className="font-medium text-lg">Wechat: She Rewires Digital</span>
             </li>
             <li className="pb-2">
-              <span className="font-medium">小宇宙: She Rewires Digital</span>
+              <span className="font-medium text-lg">小宇宙: She Rewires Digital</span>
             </li>
             <li className="pb-2">
-              <span className="font-medium">小红书: She Rewires Digital</span>
+              <span className="font-medium text-lg">小红书: She Rewires Digital</span>
             </li>
           </ul>
         </div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
 import Logo from "../../public/SheRewires_Digital_Logo_Color.png"
+import Subscribe from "./subscribe"
 
 enum Page {
   Home = "home",
@@ -14,6 +15,8 @@ enum Page {
 export default function Header() {
   const pathname = usePathname()
   const [currentPage, setCurrentPage] = useState<null | Page>(null)
+  const [showSub, setShowSub] = useState(false)
+  const handleShowSub = () => setShowSub(!showSub)
   useEffect(() => {
     switch (pathname) {
       // case "/": setCurrentPage(Page.Home); break;
@@ -33,31 +36,38 @@ export default function Header() {
           {
             currentPage === Page.Home
               ? <a href="http://localhost:3000/home" className="font-medium border-b-2 border-indigo-600">
-                <span>Home</span></a>
+                <span className="text-darkgrey">Home</span></a>
               : <a href="http://localhost:3000/home" className="hover:font-medium">
-                <span>Home</span></a>
+                <span className="text-middlegrey hover:text-middlegrey">Home</span></a>
           }
         </li>
         <li className="w-20 h-6">
           {
             currentPage === Page.Archive
-              ? <a href="http://localhost:3000/archive" className="font-medium border-b-2 border-indigo-600">Archive</a>
-              : <a href="http://localhost:3000/archive" className="hover:font-medium">Archive</a>
+              ? <a href="http://localhost:3000/archive" className="font-medium border-b-2 border-indigo-600">
+                <span className="text-darkgrey">Archive</span></a>
+              : <a href="http://localhost:3000/archive" className="hover:font-medium">
+                <span className="text-middlegrey hover:text-middlegrey">Archive</span></a>
           }
         </li>
         <li className="w-20 h-6">
           {
             currentPage === Page.About
-              ? <a href="http://localhost:3000/about" className="font-medium border-b-2 border-indigo-600">About Us</a>
-              : <a href="http://localhost:3000/about" className="hover:font-medium">About Us</a>
+              ? <a href="http://localhost:3000/about" className="font-medium border-b-2 border-indigo-600">
+                <span className="text-darkgrey">About Us</span></a>
+              : <a href="http://localhost:3000/about" className="hover:font-medium">
+                <span className="text-middlegrey hover:text-middlegrey">About Us</span></a>
           }
         </li>
       </ul>
       <div>
-        <button className="rounded-3xl border-2 border-slate-500 px-4 py-2">
-          <span className="text-base">Subscribe</span>
+        <button className="rounded-3xl border-2 border-slate-500 px-4 py-2" onClick={handleShowSub}>
+          <span className="text-base text-darkgrey">Subscribe</span>
         </button>
       </div>
     </div>
+    {
+      showSub && <Subscribe showSub={showSub} handleShowSub={handleShowSub} />
+    }
   </div>
 }
