@@ -14,7 +14,12 @@ const config: Config = {
       colors: {
         'darkgrey': '#1C1B1F',
         'middlegrey': '#373C40',
-        'lightgrey': '#636366'
+        'lightgrey': '#636366',
+        'whitegrey': '#E4E4E4',
+        'bluepurple': '#CAD2FF',
+        'lightpurple': '#E5D1FF',
+        'lightpink': '#FFD7E3',
+
       },
       spacing: {
         '114': '456px'

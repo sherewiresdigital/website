@@ -25,7 +25,7 @@ export default function Banner() {
         </h3>
         <div className="pt-12">
           <button className="rounded-3xl border-2 border-slate-500 px-4 py-2" onClick={handleShowSub}>
-            <span className="text-base font-medium text-darkgrey">Register for free</span>
+            <span className="text-base font-semibold text-darkgrey">Register for free</span>
             <ArrowForwardIcon className='ml-4' />
           </button>
         </div>

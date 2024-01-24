@@ -26,7 +26,7 @@ export default function Subscribe(props: { showSub: boolean, handleShowSub: Mous
           <input type="text" value="email address" className='ml-4 text-sm placeholder-slate-200 focus:outline-none focus:border-none' />
         </div>
         <button className="h-10 px-4 py-2 ml-4 rounded-3xl border-2 border-slate-500">
-          <span className="text-base text-darkgrey">Subscribe</span>
+          <span className="text-base text-darkgrey font-semibold">Subscribe</span>
         </button>
       </div>
     </div>

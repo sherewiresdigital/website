@@ -7,9 +7,9 @@ import Logo from "../../public/SheRewires_Digital_Logo_Color.png"
 import Subscribe from "./subscribe"
 
 enum Page {
-  Home = "home",
-  Archive = "archive",
-  About = "about"
+  Home = "Home",
+  Archive = "Archive",
+  About = "About"
 }
 
 export default function Header() {
@@ -19,7 +19,6 @@ export default function Header() {
   const handleShowSub = () => setShowSub(!showSub)
   useEffect(() => {
     switch (pathname) {
-      // case "/": setCurrentPage(Page.Home); break;
       case "/home": setCurrentPage(Page.Home); break;
       case "/archive": setCurrentPage(Page.Archive); break;
       case "/about": setCurrentPage(Page.About); break;
@@ -32,37 +31,27 @@ export default function Header() {
         <Image src={Logo} alt="logo" className="w-32" priority />
       </div>
       <ul className="flex columns-3 gap-x-12 text-base">
-        <li className="w-20">
-          {
-            currentPage === Page.Home
-              ? <a href="http://localhost:3000/home" className="font-medium border-b-2 border-indigo-600">
-                <span className="text-darkgrey">Home</span></a>
-              : <a href="http://localhost:3000/home" className="hover:font-medium">
-                <span className="text-middlegrey hover:text-middlegrey">Home</span></a>
-          }
-        </li>
-        <li className="w-20 h-6">
-          {
-            currentPage === Page.Archive
-              ? <a href="http://localhost:3000/archive" className="font-medium border-b-2 border-indigo-600">
-                <span className="text-darkgrey">Archive</span></a>
-              : <a href="http://localhost:3000/archive" className="hover:font-medium">
-                <span className="text-middlegrey hover:text-middlegrey">Archive</span></a>
-          }
-        </li>
-        <li className="w-20 h-6">
-          {
-            currentPage === Page.About
-              ? <a href="http://localhost:3000/about" className="font-medium border-b-2 border-indigo-600">
-                <span className="text-darkgrey">About Us</span></a>
-              : <a href="http://localhost:3000/about" className="hover:font-medium">
-                <span className="text-middlegrey hover:text-middlegrey">About Us</span></a>
-          }
-        </li>
+        {
+          [
+            ['Home', '/home'],
+            ['Archive', '/archive'],
+            ['About', '/about']
+          ].map(([title, url]) => 
+            <li className="w-20" key={title}>
+              {
+                currentPage === title
+                ? <a href={`http://localhost:3000${url}`} className="font-medium border-b-2 border-indigo-600">
+                  <span className="text-darkgrey">{title}</span></a>
+                : <a href={`http://localhost:3000${url}`} className="hover:font-medium">
+                  <span className="text-middlegrey hover:text-middlegrey">{title}</span></a>
+              }
+            </li>
+          )
+        }
       </ul>
       <div>
-        <button className="rounded-3xl border-2 border-slate-500 px-4 py-2" onClick={handleShowSub}>
-          <span className="text-base text-darkgrey">Subscribe</span>
+        <button className="px-4 py-2 rounded-3xl border-2 border-slate-500" onClick={handleShowSub}>
+          <span className="text-base font-semibold text-darkgrey">Subscribe</span>
         </button>
       </div>
     </div>
