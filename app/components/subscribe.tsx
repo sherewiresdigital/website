@@ -5,7 +5,7 @@ import { MouseEventHandler } from 'react';
 export default function Subscribe(props: { showSub: boolean, handleShowSub: MouseEventHandler }) {
   const showSub = props.showSub
   const handleShowSub = props.handleShowSub
-  return <div className='absolute top-0 left-0 w-screen h-screen bg-slate-400/75'>
+  return <div className='fixed top-0 left-0 w-screen h-full bg-slate-400/75'>
     {
       showSub &&  <div className="mx-auto mt-28 pl-8 pr-4 py-4 w-5/12 h-80 bg-white shadow-2xl">
       <div className='flex hover: cursor-pointer' onClick={handleShowSub}>
