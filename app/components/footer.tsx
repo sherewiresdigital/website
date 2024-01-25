@@ -8,7 +8,7 @@ export default function Footer() {
           <h1 className="text-3xl font-medium">
             Join our community
           </h1>
-          <ArrowCircleRightOutlinedIcon className='ml-4 w-8 h-8 -rotate-45' />
+          <span className='ml-2 text-4xl text-middlegrey -rotate-45 material-symbols-outlined'>arrow_circle_right</span>
         </div>
         <h6 className="pt-6 text-base font-normal w-96">
           Join us today to connect, learn, and thrive in an

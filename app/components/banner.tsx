@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react';
-import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Subscribe from './subscribe';
 
@@ -10,12 +9,13 @@ export default function Banner() {
   return <div className="container py-8">
     <div className="flex mx-auto columns-2 items-center w-10/12">
       <div className="w-1/2 pl-24">
-        <div className='flex'>
+        <div className='flex items-center'>
           <h2 className="text-lg font-medium text-middlegrey">
             Upcoming
           </h2>
-          {/* <svg></svg> */}
-          <CampaignOutlinedIcon className='ml-4 w-8 h-8 font-light stroke-1'/>
+          <span className="ml-2 text-3xl text-middlegrey material-symbols-outlined">
+            campaign
+          </span>
         </div>
         <h1 className="pt-6 text-6xl font-bold text-darkgrey">
           STEP IN HIGH TECH VEHICLE
@@ -24,9 +24,9 @@ export default function Banner() {
           Oct 12, 2023 Online
         </h3>
         <div className="pt-12">
-          <button className="rounded-3xl border-2 border-slate-500 px-4 py-2" onClick={handleShowSub}>
+          <button className="flex items-center rounded-3xl border-2 border-slate-500 pl-6 pr-4 py-2" onClick={handleShowSub}>
             <span className="text-base font-semibold text-darkgrey">Register for free</span>
-            <ArrowForwardIcon className='ml-4' />
+            <span className="ml-2 text-2xl text-middlegrey material-symbols-outlined">Arrow_Forward</span>
           </button>
         </div>
       </div>

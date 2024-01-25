@@ -21,8 +21,8 @@ export default function Subscribe(props: { showSub: boolean, handleShowSub: Mous
         </h2>
       </div>
       <div className='flex mt-12'>
-        <div className="flex w-96 h-10 px-4 py-2 bg-white border border-slate-300 rounded-3xl">
-          <ForwardToInboxIcon />
+        <div className="flex items-center w-96 h-10 px-4 py-2 bg-white border border-lightgrey rounded-3xl">
+          <span className='text-2xl text-lightgrey material-symbols-outlined'>Forward_To_Inbox</span>
           <input type="text" value="email address" className='ml-4 text-sm placeholder-slate-200 focus:outline-none focus:border-none' />
         </div>
         <button className="h-10 px-4 py-2 ml-4 rounded-3xl border-2 border-slate-500">
