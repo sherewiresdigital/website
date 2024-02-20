@@ -31,7 +31,7 @@ export default function Banner() {
         </div>
       </div>
       <div className="w-1/2 pl-24">
-        flyer
+        Flyer
       </div>
     </div>
     {
