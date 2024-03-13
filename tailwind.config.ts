@@ -19,18 +19,21 @@ const config: Config = {
         'bluepurple': '#CAD2FF',
         'lightpurple': '#E5D1FF',
         'lightpink': '#FFD7E3',
-
       },
       spacing: {
         '114': '456px'
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      // backgroundImage: {
+      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      //   'gradient-conic':
+      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      // },
     },
   },
   plugins: [],
 }
 export default config
+function rbg(arg0: number, arg1: number, arg2: number): string | import("tailwindcss/types/config").RecursiveKeyValuePair<string, string> {
+  throw new Error('Function not implemented.')
+}
+
