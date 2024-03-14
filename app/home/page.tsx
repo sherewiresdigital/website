@@ -1,10 +1,18 @@
 import Banner from "../components/banner"
 import Posts from "../components/posts"
 import Script from "next/script"
+import Head from "next/head";
 
 export default function HomePage() {
+
   return (
     <div>
+      {/* <Head>
+        <script />
+      </Head> */}
+        {/* <Script id="interactive_bubbles">
+          {process.env.rawTsFromFile}
+        </Script> */}
       {/* content */}
       <Banner />
       <Posts />
@@ -15,7 +23,7 @@ export default function HomePage() {
             <filter id="goo">
               <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
               <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-              <feBlend in="SourceGraphic" in2="goo"/>
+              <feBlend in="SourceGraphic" in2="goo" />
             </filter>
           </defs>
         </svg>
@@ -28,7 +36,6 @@ export default function HomePage() {
           <div className="interactive"></div>
         </div>
       </div>
-      <Script type="module" src="./interaction.ts" />
       
     </div>
   )

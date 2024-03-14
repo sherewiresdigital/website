@@ -1,4 +1,6 @@
-import '../globals.css'
+import './globals.css';
+
+console.log('loading script >>>>>>>>>>>>>>>>>>>>>>')
 
 let curX: number = 0;
 let curY: number = 0;
@@ -6,6 +8,9 @@ let tgX: number = 0;
 let tgY: number = 0;
 
 document.addEventListener('DOMContentLoaded', (): void => {
+
+  console.log('staring morphing ................')
+
   const interBubble: HTMLDivElement = document.querySelector<HTMLDivElement>('.interactive')!;
 
   function move(): void {
@@ -23,5 +28,7 @@ document.addEventListener('DOMContentLoaded', (): void => {
   });
 
   move();
+
+  console.log('ending code')
 
 });

@@ -1,4 +1,5 @@
-import type { Config } from 'tailwindcss'
+// import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss/types/config'
 
 const config: Config = {
   content: [
@@ -23,11 +24,6 @@ const config: Config = {
       spacing: {
         '114': '456px'
       },
-      // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic':
-      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
     },
   },
   plugins: [],
