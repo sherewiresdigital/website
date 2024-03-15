@@ -2,38 +2,40 @@
 import Banner from "../components/banner"
 import Posts from "../components/posts"
 import Script from "next/script"
-import { useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function HomePage() {
-
-  let curX: number = 0;
-  let curY: number = 0;
-  let tgX: number = 0;
-  let tgY: number = 0;
+  const [curX, setCurX] = useState(0);
+  const [curY, setCurY] = useState(0);
+  const [tgX, setTgX] = useState(0);
+  const [tgY, setTgY] = useState(0);
 
   const interBubble = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   const move = (): void => {
-    console.log('Moving ................')
-    curX += (tgX - curX) / 20;
-    curY += (tgY - curY) / 20;
-    // interBubble && interBubble.current.style.transform = 'translate(${Math.round(curX)}px, ${Math.round(curY)}px)';
+    setCurX((tgX - curX) / 20)
+    setCurY((tgY - curY) / 20)
+    console.log('DOM -- ', interBubble.current);
+    interBubble && (interBubble.current.style.transform = 'translate(${Math.round(curX)}px, ${Math.round(curY)}px)');
     requestAnimationFrame((): void => {
       move();
     });
   }
 
-  move();
-
   const handleMoveMouse = (e: any): void => {
-    console.log('Mose moving >>>>>>>>>>>>>>>>>>')
-    tgX = e.clientX;
-    tgY = e.clientY;
+    console.log('Mouse moving >>>>>>>>>>>>>>>>>>')
+    setTgX(e.clientX)
+    setTgY(e.clientY)
+    setCurX((tgX - curX) / 20)
+    setCurY((tgY - curY) / 20)
+    console.log('curX >>> ', curX, 'curY >>> ', curY)
   }
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // useEffect(() => move(), [tgX, tgY])
 
   return (
     <div onMouseMove={handleMoveMouse}>
-      <Script type="text/javascript" src="/interaction.js" />
       {/* content */}
       <Banner />
       <Posts />
@@ -48,16 +50,15 @@ export default function HomePage() {
             </filter>
           </defs>
         </svg>
-        <div className="gradients-container">
+        <div className="gradients-container" >
           <div className="g1"></div>
           <div className="g2"></div>
           <div className="g3"></div>
           <div className="g4"></div>
           <div className="g5"></div>
-          <div className="interactive" ref={interBubble} ></div>
+          <div className="interactive" ref={interBubble} style={{transform: 'translate(${Math.round(curX)}px, ${Math.round(curY)}px)'}}></div>
         </div>
       </div>
-
     </div>
   )
 }
