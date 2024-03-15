@@ -1,39 +1,16 @@
-"use client"
 import Banner from "../components/banner"
 import Posts from "../components/posts"
 import Script from "next/script"
-import { useRef } from "react";
+import Head from "next/head";
 
 export default function HomePage() {
 
-  let curX: number = 0;
-  let curY: number = 0;
-  let tgX: number = 0;
-  let tgY: number = 0;
-
-  const interBubble = useRef() as React.MutableRefObject<HTMLInputElement>;
-
-  const move = (): void => {
-    console.log('Moving ................')
-    curX += (tgX - curX) / 20;
-    curY += (tgY - curY) / 20;
-    // interBubble && interBubble.current.style.transform = 'translate(${Math.round(curX)}px, ${Math.round(curY)}px)';
-    requestAnimationFrame((): void => {
-      move();
-    });
-  }
-
-  move();
-
-  const handleMoveMouse = (e: any): void => {
-    console.log('Mose moving >>>>>>>>>>>>>>>>>>')
-    tgX = e.clientX;
-    tgY = e.clientY;
-  }
-
   return (
-    <div onMouseMove={handleMoveMouse}>
-      <Script type="text/javascript" src="/interaction.js" />
+    <div>
+      {/* <Head>
+        <script async type="typescript" src="/interaction.ts" />
+      </Head> */}
+        <Script type="text/javascript" src="/interaction.js" />
       {/* content */}
       <Banner />
       <Posts />
@@ -54,10 +31,10 @@ export default function HomePage() {
           <div className="g3"></div>
           <div className="g4"></div>
           <div className="g5"></div>
-          <div className="interactive" ref={interBubble} ></div>
+          <div className="interactive"></div>
         </div>
       </div>
-
+      
     </div>
   )
 }

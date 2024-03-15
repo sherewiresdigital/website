@@ -1,6 +1,6 @@
-import './globals.css';
+// import './globals.css';
 
-console.log('loading script >>>>>>>>>>>>>>>>>>>>>>')
+console.log('ts loading script >>>>>>>>>>>>>>>>>>>>>>')
 
 let curX: number = 0;
 let curY: number = 0;

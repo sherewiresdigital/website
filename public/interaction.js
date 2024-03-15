@@ -1,34 +1,33 @@
 //import '/style.css';
 
-console.log('loading script >>>>>>>>>>>>>>>>>>>>>>')
+// import '../loader';
 
-let curX = 0;
-let curY = 0;
-let tgX = 0;
-let tgY = 0;
+  let curX = 0;
+  let curY = 0;
+  let tgX = 0;
+  let tgY = 0;
 
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
 
-  console.log('staring morphing ................')
+    const interBubble = document.querySelector < HTMLDivElement > ('.interactive');
 
-  const interBubble = document.querySelector<HTMLDivElement>('.interactive');
+    function move() {
+      curX += (tgX - curX) / 20;
+      curY += (tgY - curY) / 20;
+      interBubble.style.transform = 'translate(${Math.round(curX)}px, ${Math.round(curY)}px)';
+      requestAnimationFrame(() => {
+        move();
+      });
+    }
 
-  function move() {
-    curX += (tgX - curX) / 20;
-    curY += (tgY - curY) / 20;
-    interBubble.style.transform = 'translate(${Math.round(curX)}px, ${Math.round(curY)}px)';
-    requestAnimationFrame(() => {
-      move();
+    window.addEventListener('mousemove', (event) => {
+      tgX = event.clientX;
+      tgY = event.clientY;
     });
-  }
 
-  window.addEventListener('mousemove', (event) => {
-    tgX = event.clientX;
-    tgY = event.clientY;
+    move();
+
+    console.log('ending code')
+
   });
 
-  move();
-
-  console.log('ending code')
-
-});
