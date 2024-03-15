@@ -8,11 +8,9 @@ export default function HomePage() {
   return (
     <div>
       {/* <Head>
-        <script />
+        <script async type="typescript" src="/interaction.ts" />
       </Head> */}
-        {/* <Script id="interactive_bubbles">
-          {process.env.rawTsFromFile}
-        </Script> */}
+        <Script type="text/javascript" src="/interaction.js" />
       {/* content */}
       <Banner />
       <Posts />
