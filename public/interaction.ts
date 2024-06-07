@@ -1,34 +1,34 @@
 // import './globals.css';
 
-console.log('ts loading script >>>>>>>>>>>>>>>>>>>>>>')
+// console.log('ts loading script >>>>>>>>>>>>>>>>>>>>>>')
 
-let curX: number = 0;
-let curY: number = 0;
-let tgX: number = 0;
-let tgY: number = 0;
+// let curX: number = 0;
+// let curY: number = 0;
+// let tgX: number = 0;
+// let tgY: number = 0;
 
-document.addEventListener('DOMContentLoaded', (): void => {
+// document.addEventListener('DOMContentLoaded', (): void => {
 
-  console.log('staring morphing ................')
+//   console.log('staring morphing ................')
 
-  const interBubble: HTMLDivElement = document.querySelector<HTMLDivElement>('.interactive')!;
+//   const interBubble: HTMLDivElement = document.querySelector<HTMLDivElement>('.interactive')!;
 
-  function move(): void {
-    curX += (tgX - curX) / 20;
-    curY += (tgY - curY) / 20;
-    interBubble.style.transform = 'translate(${Math.round(curX)}px, ${Math.round(curY)}px)';
-    requestAnimationFrame(():void => {
-      move();
-    });
-  }
+//   function move(): void {
+//     curX += (tgX - curX) / 20;
+//     curY += (tgY - curY) / 20;
+//     interBubble.style.transform = 'translate(${Math.round(curX)}px, ${Math.round(curY)}px)';
+//     requestAnimationFrame(():void => {
+//       move();
+//     });
+//   }
 
-  window.addEventListener('mousemove', (event: MouseEvent): void => {
-    tgX = event.clientX;
-    tgY = event.clientY;
-  });
+//   window.addEventListener('mousemove', (event: MouseEvent): void => {
+//     tgX = event.clientX;
+//     tgY = event.clientY;
+//   });
 
-  move();
+//   move();
 
-  console.log('ending code')
+//   console.log('ending code')
 
-});
+// });
